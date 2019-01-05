@@ -155,8 +155,8 @@ const todoList = {
     });
     this.displayTodos();
   },
-  changeTodo: function(index, newValue) {
-    this.todos[index] = newValue;
+  changeTodo: function(index, todoText) {
+    this.todos[index].todoText = todoText;
     this.displayTodos();
   },
   deleteTodo: function(index) {
