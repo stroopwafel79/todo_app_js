@@ -141,6 +141,29 @@ const todoList = {
 // 1. todoList.addTodo should add objects.
 // 2. todoList.changeTodo should change the todo Text property
 // 3. todoList.toggleCompleted should change the completed property.
+// Each to do will be an object with properties
+
+const todoList = {
+  todos: [], // NO ; when setting a value of a property.
+  displayTodos: function() { // anonymous funct b/c access via todoList.displayTodos
+    console.log('My todos:', this.todos);
+  },
+  addTodo: function(todoText) {
+    this.todos.push({
+      todoText: todoText,
+      completed: false
+    });
+    this.displayTodos();
+  },
+  changeTodo: function(index, newValue) {
+    this.todos[index] = newValue;
+    this.displayTodos();
+  },
+  deleteTodo: function(index) {
+    this.todos.splice(index, 1);
+    this.displayTodos();
+  } 
+};
 
 
 
