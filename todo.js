@@ -183,4 +183,8 @@ i=0                 // Initialization
 say "hey" if i < 3  // Condition
 increase i by 1     // final-expression
 
+for (let i = 0; i < 3; i++) {
+  console.log("hey");
+}
+
 
