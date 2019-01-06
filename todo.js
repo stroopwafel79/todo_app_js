@@ -195,6 +195,13 @@ for (let i = 0; i < testArray.length; i++) {
   console.log(testArray[i]);
 }
 
+/////// if statements
+if (condition) {
+  // code that runs if condition is true
+} else {
+  // code that runs if condition is false
+}
+
 //////// V5 Requirements
 // 1. .displayTodos should show .todoText
 // 2. .displayTodos should tell you if .todos is empty
