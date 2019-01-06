@@ -187,4 +187,10 @@ for (let i = 0; i < 3; i++) {
   console.log("hey");
 }
 
+//////// loop over an array
 
+const testArray = ['item 1', 'item 2', 'itme 3'];
+
+for (let i = 0; i < testArray.length; i++) {
+  console.log(testArray[i]);
+}
