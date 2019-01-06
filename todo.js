@@ -195,8 +195,45 @@ for (let i = 0; i < testArray.length; i++) {
   console.log(testArray[i]);
 }
 
-
 //////// V5 Requirements
 // 1. .displayTodos should show .todoText
 // 2. .displayTodos should tell you if .todos is empty
 // 3. .displayTodos should show .completed
+
+const todoList = {
+  todos: [], // NO ; when setting a value of a property.
+
+
+  displayTodos: function() { // anonymous funct b/c access via todoList.displayTodos
+    console.log('My todos:');
+    for (let i = 0, i < this.todos.length, i++) {
+      console.log(this.todos[i].todoText);
+    }
+  },
+
+  addTodo: function(todoText) {
+    this.todos.push({
+      todoText: todoText,
+      completed: false
+    });
+    this.displayTodos();
+  },
+
+  changeTodo: function(index, todoText) {
+    this.todos[index].todoText = todoText;
+    this.displayTodos();
+  },
+
+  toggleCompleted: function(position) {
+    const todo = this.todos[position];
+    todo.completed = !todo.completed;
+    this.displayTodos();
+  },
+
+  deleteTodo: function(index) {
+    this.todos.splice(index, 1);
+    this.displayTodos();
+  } 
+};
+
+
