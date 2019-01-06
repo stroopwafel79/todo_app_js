@@ -194,3 +194,9 @@ const testArray = ['item 1', 'item 2', 'itme 3'];
 for (let i = 0; i < testArray.length; i++) {
   console.log(testArray[i]);
 }
+
+
+//////// V5 Requirements
+// 1. .displayTodos should show .todoText
+// 2. .displayTodos should tell you if .todos is empty
+// 3. .displayTodos should show .completed
