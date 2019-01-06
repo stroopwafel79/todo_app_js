@@ -145,9 +145,12 @@ const todoList = {
 
 const todoList = {
   todos: [], // NO ; when setting a value of a property.
+
+
   displayTodos: function() { // anonymous funct b/c access via todoList.displayTodos
     console.log('My todos:', this.todos);
   },
+
   addTodo: function(todoText) {
     this.todos.push({
       todoText: todoText,
@@ -155,6 +158,7 @@ const todoList = {
     });
     this.displayTodos();
   },
+
   changeTodo: function(index, todoText) {
     this.todos[index].todoText = todoText;
     this.displayTodos();
@@ -165,11 +169,18 @@ const todoList = {
     todo.completed = !todo.completed;
     this.displayTodos();
   },
+
   deleteTodo: function(index) {
     this.todos.splice(index, 1);
     this.displayTodos();
   } 
 };
 
+
+//////// for loops in js
+
+i=0                 // Initialization
+say "hey" if i < 3  // Condition
+increase i by 1     // final-expression
 
 
