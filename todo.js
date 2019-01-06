@@ -205,9 +205,13 @@ const todoList = {
 
 
   displayTodos: function() { // anonymous funct b/c access via todoList.displayTodos
-    console.log('My todos:');
-    for (let i = 0, i < this.todos.length, i++) {
-      console.log(this.todos[i].todoText);
+    if (this.todo.length === 0) {
+      console.log('Your todo list is empty');
+    } else {
+      console.log('My todos:');
+      for (let i = 0, i < this.todos.length, i++) {
+        console.log(this.todos[i].todoText);
+      }
     }
   },
 
