@@ -253,3 +253,8 @@ const todoList = {
 };
 
 
+//////////// Version 6 Requirements
+//1. .toggleAll: If everything true, make everything false.
+//2. .toggleAll: Otherwise make everything true.
+
+
