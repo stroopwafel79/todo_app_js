@@ -325,3 +325,10 @@ const todoList = {
   } 
 };
 
+
+///////// Version 7 Requirements
+// 1. There should be a "Display todos" button and a "Toggle all" button in the app.
+// 2. Clicking "Display todos" should run todoList.displayTodos.
+// 3. Clicking "Toggle all" should run todoList.toggleAll.
+
+
