@@ -312,10 +312,16 @@ const todoList = {
     }
     //If everything's true, make everything false
     if (completedTodos === totalTodos) {
-      for (let i = 0, i < totalTodos, i++);
-        this.todo[i].completed = false;
+      for (let i = 0; i < totalTodos; i++) {
+        this.todos[i].completed = false;
+      }
+    // Otherwise, make everything true.
+    } else {
+      for (let i = 0; i < totalTodos; i++) {
+        this.todos[i].completed = true;
+      }
     }
-     
+    this.displayTodos();
   } 
 };
 
