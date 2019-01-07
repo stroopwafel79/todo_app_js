@@ -257,4 +257,65 @@ const todoList = {
 //1. .toggleAll: If everything true, make everything false.
 //2. .toggleAll: Otherwise make everything true.
 
+const todoList = {
+  todos: [], // NO ; when setting a value of a property.
+
+
+  displayTodos: function() { // anonymous funct b/c access via todoList.displayTodos
+    if (this.todos.length === 0) {
+      console.log('Your todo list is empty');
+    } else {
+      console.log('My todos:');
+      for (let i = 0, i < this.todos.length, i++) {
+
+        if (this.todos[i].completed === true) {
+          console.log('[x]', this.todos[i].todoText);
+        } else {
+          console.log('[ ]', this.todos[i].todoText);
+        }
+      }
+    }
+  },
+
+  addTodo: function(todoText) {
+    this.todos.push({
+      todoText: todoText,
+      completed: false
+    });
+    this.displayTodos();
+  },
+
+  changeTodo: function(index, todoText) {
+    this.todos[index].todoText = todoText;
+    this.displayTodos();
+  },
+
+  toggleCompleted: function(position) {
+    const todo = this.todos[position];
+    todo.completed = !todo.completed;
+    this.displayTodos();
+  },
+
+  deleteTodo: function(index) {
+    this.todos.splice(index, 1);
+    this.displayTodos();
+  },
+
+  toggleAll: function() {
+    const totalTodos = this.todos.length;
+    const completedTodos = 0;
+    //Get number of completed todos
+    for (let i = 0; i < totalTodos; i++) {
+      if (this.todos[i].completed === true) {
+        completedTodos++;
+      }
+    }
+    //If everything's true, make everything false
+    if (completedTodos === totalTodos) {
+      for (let i = 0, i < totalTodos, i++);
+        this.todo[i].completed = false;
+    }
+     
+  } 
+};
 
