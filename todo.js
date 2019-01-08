@@ -359,9 +359,13 @@ let handlers = {
   },
 
   addTodo: function() {
-    // Get input from html input element
+    // Get input from html input element first
     const addTodoTextInput = document.getElementById('addTodoTextInput');
+    // use value from DOM element above to call the method
     todoList.addTodo(addTodoTextInput.value);
+    // Once todo added, set the input to an empty string indicating it's 
+    // ready for a new todo
+    addTodoTextInput.value = '';
   }
 };
 
