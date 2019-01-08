@@ -361,6 +361,7 @@ let handlers = {
 
 
 //////// Version 8 requirements
+// Note all methods below require arguements.
 // 1. It should have working controls for .addTodo
 // 2. It should have working controls for .changeTodo
 // 3. It should have working controls for .deleteTodo
