@@ -331,4 +331,11 @@ const todoList = {
 // 2. Clicking "Display todos" should run todoList.displayTodos.
 // 3. Clicking "Toggle all" should run todoList.toggleAll.
 
+// We want to get access to display todos button
 
+const displayTodosButton = document.getElementById('displayTodosButton');
+// We want to run the display todos method, when someone clicks on button
+
+displayTodosButton.addEventListener('click', function() {
+  todoList.displayTodos();
+});
