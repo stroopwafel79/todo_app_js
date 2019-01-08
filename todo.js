@@ -356,6 +356,12 @@ let handlers = {
 
   toggleAll: function() {
     todoList.toggleAll();
+  },
+
+  addTodo: function() {
+    // Get input from html input element
+    const addTodoTextInput = document.getElementById('addTodoTextInput');
+    todoList.addTodo(addTodoTextInput.value);
   }
 };
 
