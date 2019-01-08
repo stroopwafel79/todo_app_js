@@ -262,7 +262,6 @@ const todoList = {
 
 
   displayTodos: function() { // anonymous funct b/c access via todoList.displayTodos
-    debugger;
     if (this.todos.length === 0) {
       console.log('Your todo list is empty');
     } else {
@@ -333,15 +332,26 @@ const todoList = {
 // 3. Clicking "Toggle all" should run todoList.toggleAll.
 
 // We want to get access to display todos and toggle all buttons
-const displayTodosButton = document.getElementById('displayTodosButton');
-const toggleAllButton = document.getElementById('toggleAllButton');
+// Code below removed because added onclick attribute to the button DOM element
+// const displayTodosButton = document.getElementById('displayTodosButton');
+// const toggleAllButton = document.getElementById('toggleAllButton');
 
 // We want to run the display todos method, when someone clicks on button
-displayTodosButton.addEventListener('click', function() {
-  todoList.displayTodos();
-});
+// displayTodosButton.addEventListener('click', function() {
+//   todoList.displayTodos();
+// });
 
-// We want to toggle all when someone clicks the button
-toggleAllButton.addEventListener('click', function() {
-  todoList.toggleAll();
-})
+// // We want to toggle all when someone clicks the button
+// toggleAllButton.addEventListener('click', function() {
+//   todoList.toggleAll();
+// });
+
+const handlers = {
+  displayTodos: function() {
+    todoList.displayTodos();
+  },
+
+  toggleAll: function() {
+    todoList.toggleAll();
+  }
+};
