@@ -415,43 +415,15 @@ const todosUl = document.querySelector('ul');
 todosUl.appendChild(todoLi);
 ////////////////// THIS IS COOL (ABOVE)//////////////////////////////////////////
 
-let handlers = {
+// responsible for what the user sees
+let view = {
   displayTodos: function() {
-    todoList.displayTodos();
-  },
-
-  addTodo: function() {
-    // Get input from html input element first
-    const addTodoTextInput = document.getElementById('addTodoTextInput');
-    // use value from DOM element above to call the method
-    todoList.addTodo(addTodoTextInput.value);
-    // Once todo added, set the input to an empty string indicating it's 
-    // ready for a new todo
-    addTodoTextInput.value = '';
-  },
-
-  changeTodo: function() {
-    const changeTodoPositionInput = document.getElementById('changeTodoPositionInput');
-    const changeTodoTextInput = document.getElementById('changeTodoTextInput');
-    todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
-    changeTodoPositionInput.value = '';
-    changeTodoTextInput.value = '';
-  },
-
-  deleteTodo: function() {
-    const deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
-    todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
-    deleteTodoPositionInput.value = '';
-  },
-
-  toggleCompleted: function() {
-    const toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
-    todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
-    toggleCompletedPositionInput.value = '';
-  },
-
-  toggleAll: function() {
-    todoList.toggleAll();
+    const todosUl = document.querySelector('ul');
+    // clear out ul before adding more.
+    todosUl.innerHTML = '';
+    for (let i = 0; i < todoList.todos.length; i++) {
+      const todoLi = document.createElement('li');
+      todosUl.appendChild(todoLi);
+    }
   }
 };
-
