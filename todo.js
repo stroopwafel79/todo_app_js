@@ -403,8 +403,17 @@ let handlers = {
 // 2. Each li element should contain .todoText.
 // 3. Each li element should show .completed.
 
+////////////////// THIS IS COOL (BELOW) ///////////////////////////////////////////
+// create list elements in the DOM using the document object's
+// createElement method
+const todoLi = document.createElement('li');
 
+// Add a query searching for CSS selectors #id, .class, element
+const todosUl = document.querySelector('ul');
 
+// Select ul element in DOM.append a child element(newly created element)
+todosUl.appendChild(todoLi);
+////////////////// THIS IS COOL (ABOVE)//////////////////////////////////////////
 
 let handlers = {
   displayTodos: function() {
