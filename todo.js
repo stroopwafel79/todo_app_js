@@ -390,9 +390,59 @@ let handlers = {
 };
 
 
-//////// Version 8 requirements
+//////// Version 8 requirements - completed in code above
 // Note all methods below require arguements.
 // 1. It should have working controls for .addTodo
 // 2. It should have working controls for .changeTodo
 // 3. It should have working controls for .deleteTodo
 // 4. It should have working controls for .toggleCompleted
+
+
+///////// Version 9 requirements
+// 1. There should be an li element for every todo.
+// 2. Each li element should contain .todoText.
+// 3. Each li element should show .completed.
+
+
+
+
+let handlers = {
+  displayTodos: function() {
+    todoList.displayTodos();
+  },
+
+  addTodo: function() {
+    // Get input from html input element first
+    const addTodoTextInput = document.getElementById('addTodoTextInput');
+    // use value from DOM element above to call the method
+    todoList.addTodo(addTodoTextInput.value);
+    // Once todo added, set the input to an empty string indicating it's 
+    // ready for a new todo
+    addTodoTextInput.value = '';
+  },
+
+  changeTodo: function() {
+    const changeTodoPositionInput = document.getElementById('changeTodoPositionInput');
+    const changeTodoTextInput = document.getElementById('changeTodoTextInput');
+    todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
+    changeTodoPositionInput.value = '';
+    changeTodoTextInput.value = '';
+  },
+
+  deleteTodo: function() {
+    const deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
+    todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
+    deleteTodoPositionInput.value = '';
+  },
+
+  toggleCompleted: function() {
+    const toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
+    todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+    toggleCompletedPositionInput.value = '';
+  },
+
+  toggleAll: function() {
+    todoList.toggleAll();
+  }
+};
+
