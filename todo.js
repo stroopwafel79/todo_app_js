@@ -354,10 +354,6 @@ let handlers = {
     todoList.displayTodos();
   },
 
-  toggleAll: function() {
-    todoList.toggleAll();
-  },
-
   addTodo: function() {
     // Get input from html input element first
     const addTodoTextInput = document.getElementById('addTodoTextInput');
@@ -380,6 +376,16 @@ let handlers = {
     const deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
     todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
     deleteTodoPositionInput.value = '';
+  },
+
+  toggleCompleted: function() {
+    const toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
+    todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+    toggleCompletedPositionInput.value = '';
+  },
+
+  toggleAll: function() {
+    todoList.toggleAll();
   }
 };
 
