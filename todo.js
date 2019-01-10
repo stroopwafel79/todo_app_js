@@ -423,12 +423,20 @@ let view = {
     todosUl.innerHTML = '';
     for (let i = 0; i < todoList.todos.length; i++) {
       const todoLi = document.createElement('li');
-      // textContent is a built in method
+      const todo = todoList.todos[i];
+      const todoTextWithCompleted = '';
+
+      if (todo.completed === true) {
+        todoTextWithCompleted = '(x) ' + todo.todoText;
+      } else {
+        todoTextWithCompleted = '( ) ' + todo.todoText;
+      }
+
+      // textContent is a built in attribute of li element
       // access the todoLi object and set the textContent attribute
-      // to the todoText which is accessed through the todoList object
-      // to each element in the todos property and accessing the todoText
-      todoLi.textContent = todoList.todos[i].todoText;
-      todosUl.appendChild(todoLi);
+      // to todoTextWithCompleted
+      todoLi.textContent = todoTextWithCompleted;
+      todosUl.appendChild(todoLi);      
     }
   }
 };
