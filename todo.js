@@ -509,6 +509,7 @@ let view = {
       // textContent is a built in attribute of li element
       // access the todoLi object and set the textContent attribute
       // to todoTextWithCompleted
+      todoLi.id = i;
       todoLi.textContent = todoTextWithCompleted;
       todoLi.appendChild(this.createDeleteButton()); // adds delete button to li
       todosUl.appendChild(todoLi);      
@@ -521,6 +522,15 @@ let view = {
     return deleteButton;
   }
 };
+
+// Add event listener to ul element
+// Problem is that you can click anywhere not just delete button to cause event
+// But only get id number with this code if click on delete button
+const todosUl = document.querySelector('ul');
+todosUl.addEventListener('click', function(event) {
+  // on event>target>parentNode>id to get id of li element
+  console.log(event.target.parentNode.id);
+});
 
 
 
