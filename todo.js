@@ -473,8 +473,20 @@ function forEach(myArray, myFunction) {
   }
 }
 
+/////////// How to return a value
+function multiplyTwoNumbers(a, b) {
+  const result = a * b;
+  return result;
+}
+const theProductOf2And10 = multiplyTwoNumbers(2, 10);
 
 
+// /////////// Version 10 requirements
+// 1.  There should be a way to create delete buttons.
+// 2.  There should be a delete button for each todo.
+// 3.  Each li should have an id that has the todo position.
+// 4.  Delete buttons should have access to the todo id.
+// 5.  Clicking delete should update todoList.todos and the DOM.
 
 
 
