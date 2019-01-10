@@ -488,6 +488,38 @@ const theProductOf2And10 = multiplyTwoNumbers(2, 10);
 // 4.  Delete buttons should have access to the todo id.
 // 5.  Clicking delete should update todoList.todos and the DOM.
 
+let view = {
+  displayTodos: function() {
+    // get the element to work on in the DOM
+    const todosUl = document.querySelector('ul');
+    // clear out ul before adding more.
+    todosUl.innerHTML = '';
+    for (let i = 0; i < todoList.todos.length; i++) {
+
+      const todoLi = document.createElement('li');
+      const todo = todoList.todos[i];
+      const todoTextWithCompleted = '';
+
+      if (todo.completed === true) {
+        todoTextWithCompleted = '(x) ' + todo.todoText;
+      } else {
+        todoTextWithCompleted = '( ) ' + todo.todoText;
+      }
+
+      // textContent is a built in attribute of li element
+      // access the todoLi object and set the textContent attribute
+      // to todoTextWithCompleted
+      todoLi.textContent = todoTextWithCompleted;
+      todosUl.appendChild(todoLi);      
+    }
+  },
+  createDeleteButton: function() {
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.className = 'deleteButton'; // add class name to all new buttons
+    return deleteButton;
+  }
+};
 
 
 
