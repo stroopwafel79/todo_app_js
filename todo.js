@@ -259,46 +259,26 @@
 
 const todoList = {
   todos: [], // NO ; when setting a value of a property.
-
-
-  displayTodos: function() { // anonymous funct b/c access via todoList.displayTodos
-    if (this.todos.length === 0) {
-      console.log('Your todo list is empty');
-    } else {
-      console.log('My todos:');
-      for (let i = 0, i < this.todos.length, i++) {
-
-        if (this.todos[i].completed === true) {
-          console.log('[x]', this.todos[i].todoText);
-        } else {
-          console.log('[ ]', this.todos[i].todoText);
-        }
-      }
-    }
-  },
-
   addTodo: function(todoText) {
     this.todos.push({
       todoText: todoText,
       completed: false
     });
-    this.displayTodos();
   },
 
   changeTodo: function(index, todoText) {
     this.todos[index].todoText = todoText;
-    this.displayTodos();
   },
 
   toggleCompleted: function(position) {
     const todo = this.todos[position];
     todo.completed = !todo.completed;
-    this.displayTodos();
+    
   },
 
   deleteTodo: function(index) {
     this.todos.splice(index, 1);
-    this.displayTodos();
+    
   },
 
   toggleAll: function() {
@@ -321,7 +301,7 @@ const todoList = {
         this.todos[i].completed = true;
       }
     }
-    this.displayTodos();
+    
   } 
 };
 
@@ -350,10 +330,6 @@ const todoList = {
 // <button onclick="handlers.displayTodos()">Display Todos</button>
 // <button onclick="handlers.toggleAll()">Toggle All</button>
 let handlers = {
-  displayTodos: function() {
-    todoList.displayTodos();
-  },
-
   addTodo: function() {
     // Get input from html input element first
     const addTodoTextInput = document.getElementById('addTodoTextInput');
@@ -362,6 +338,7 @@ let handlers = {
     // Once todo added, set the input to an empty string indicating it's 
     // ready for a new todo
     addTodoTextInput.value = '';
+    view.displayTodos();
   },
 
   changeTodo: function() {
@@ -370,22 +347,26 @@ let handlers = {
     todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
     changeTodoPositionInput.value = '';
     changeTodoTextInput.value = '';
+    view.displayTodos();
   },
 
   deleteTodo: function() {
     const deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
     todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
     deleteTodoPositionInput.value = '';
+    view.displayTodos();
   },
 
   toggleCompleted: function() {
     const toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
     todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
     toggleCompletedPositionInput.value = '';
+    view.displayTodos();
   },
 
   toggleAll: function() {
     todoList.toggleAll();
+    view.displayTodos();
   }
 };
 
@@ -418,10 +399,12 @@ todosUl.appendChild(todoLi);
 // responsible for what the user sees
 let view = {
   displayTodos: function() {
+    // get the element to work on in the DOM
     const todosUl = document.querySelector('ul');
     // clear out ul before adding more.
     todosUl.innerHTML = '';
     for (let i = 0; i < todoList.todos.length; i++) {
+
       const todoLi = document.createElement('li');
       const todo = todoList.todos[i];
       const todoTextWithCompleted = '';
@@ -440,3 +423,18 @@ let view = {
     }
   }
 };
+
+//////// Functions that enhance other functions////////
+
+// This is a helper function that enhances other functions
+function runWithDebugger(myFuncion) {
+  debugger;
+  runWithDebugger(myFuncion);
+}
+
+// setTimeout builtin js function. 
+// take a function as an argument and time in milliseconds to delay
+// the calling of the function in the first argument
+setTimeout(function () {
+  console.log('Wake up, Kristi!');
+}, 5000);
