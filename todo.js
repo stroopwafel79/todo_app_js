@@ -510,6 +510,7 @@ let view = {
       // access the todoLi object and set the textContent attribute
       // to todoTextWithCompleted
       todoLi.textContent = todoTextWithCompleted;
+      todoLi.appendChild(this.createDeleteButton()); // adds delete button to li
       todosUl.appendChild(todoLi);      
     }
   },
