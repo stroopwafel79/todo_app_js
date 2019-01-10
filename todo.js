@@ -438,3 +438,56 @@ function runWithDebugger(myFuncion) {
 setTimeout(function () {
   console.log('Wake up, Kristi!');
 }, 5000);
+
+
+/////// For Each /////
+// run a function for each item in an array
+
+const students = ['Kristi', 'Steve', 'Eloise'];
+
+function logName(name) {
+  console.log(name);
+}
+
+// Prints name for each student
+for (let i = 0; i < students.length; i++) {
+  logName(students[i]);
+}
+
+// students, as an array, has built in functions. forEach is one.
+// it will run the function passed to it for each item in the array.
+students.forEach(logName);
+// OR define the function inside the argument
+students.forEach(function logName(name) {
+  console.log(name);
+});
+// OR don't need to name the function
+students.forEach(function(name) {
+  console.log(name);
+});
+
+// Create our own forEach which does same as built in
+function forEach(myArray, myFunction) {
+  for (let i = 0; i < myArray.length; i++) {
+    myFunction(myArray[i]);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
